@@ -54,7 +54,7 @@ public class FirstFragment extends Fragment {
                             Mat original = new Mat(bitmap.getHeight(), bitmap.getWidth(), CvType.CV_8UC1);
                             Utils.bitmapToMat(bitmap, original);
 
-                            original = createScoreMarker(original, 222);
+                            original = createScoreMarker(original, 146);
 
                             Bitmap or = Bitmap.createBitmap(original.cols(), original.rows(), Bitmap.Config.ARGB_8888);
                             Utils.matToBitmap(original, or);
@@ -127,7 +127,7 @@ public class FirstFragment extends Fragment {
                 mat,                    //Matrix obj of the image
                 new Point(100, 100),        //p1
                 new Point(2600, 2600),       //p2
-                new Scalar(102,207,219),    //Scalar object for color
+                new Scalar(102,207,219, 255),    //Scalar object for color
                 -1
         );
 
@@ -136,7 +136,7 @@ public class FirstFragment extends Fragment {
                 mat,                    //Matrix obj of the image
                 new Point(100, 100),        //p1
                 new Point(2600, 2600),       //p2
-                new Scalar(0, 0, 0),     //Scalar object for color
+                new Scalar(0, 0, 0, 255),     //Scalar object for color
                 10
         );
 
@@ -146,14 +146,14 @@ public class FirstFragment extends Fragment {
                 mat,                    //Matrix obj of the image
                 new Point(550, 550),
                 300,
-                new Scalar(255,0,0),
+                new Scalar(255,0,0, 255),
                 -1
         );
         Imgproc.circle(
                 mat,                    //Matrix obj of the image
                 new Point(550, 550),
                 300,
-                new Scalar(0,0,0),
+                new Scalar(0,0,0, 255),
                 10
         );
 
@@ -164,7 +164,7 @@ public class FirstFragment extends Fragment {
                     mat,                    //Matrix obj of the image
                     new Point(1350, 550),
                     300,
-                    new Scalar(0,0,0),
+                    new Scalar(0,0,0, 255),
                     -1
             );
         } else {
@@ -172,7 +172,7 @@ public class FirstFragment extends Fragment {
                     mat,                    //Matrix obj of the image
                     new Point(1350, 550),
                     300,
-                    new Scalar(255,255,255),
+                    new Scalar(255,255,255, 255),
                     -1
             );
         }
@@ -180,7 +180,7 @@ public class FirstFragment extends Fragment {
                 mat,                    //Matrix obj of the image
                 new Point(1350, 550),
                 300,
-                new Scalar(0,0,0),
+                new Scalar(0,0,0, 255),
                 10
         );
         //2
@@ -189,7 +189,7 @@ public class FirstFragment extends Fragment {
                     mat,                    //Matrix obj of the image
                     new Point(2150, 550),
                     300,
-                    new Scalar(0,0,0),
+                    new Scalar(0,0,0, 255),
                     -1
             );
         } else {
@@ -197,7 +197,7 @@ public class FirstFragment extends Fragment {
                     mat,                    //Matrix obj of the image
                     new Point(2150, 550),
                     300,
-                    new Scalar(255,255,255),
+                    new Scalar(255,255,255, 255),
                     -1
             );
         }
@@ -206,7 +206,7 @@ public class FirstFragment extends Fragment {
                 mat,                    //Matrix obj of the image
                 new Point(2150, 550),
                 300,
-                new Scalar(0,0,0),
+                new Scalar(0,0,0, 255),
                 10
         );
         //3
@@ -215,7 +215,7 @@ public class FirstFragment extends Fragment {
                     mat,                    //Matrix obj of the image
                     new Point(550, 1350),
                     300,
-                    new Scalar(0,0,0),
+                    new Scalar(0,0,0, 255),
                     -1
             );
         } else {
@@ -223,7 +223,7 @@ public class FirstFragment extends Fragment {
                     mat,                    //Matrix obj of the image
                     new Point(550, 1350),
                     300,
-                    new Scalar(255,255,255),
+                    new Scalar(255,255,255, 255),
                     -1
             );
         }
@@ -231,7 +231,7 @@ public class FirstFragment extends Fragment {
                 mat,                    //Matrix obj of the image
                 new Point(550, 1350),
                 300,
-                new Scalar(0,0,0),
+                new Scalar(0,0,0, 255),
                 10
         );
         //4
@@ -240,7 +240,7 @@ public class FirstFragment extends Fragment {
                     mat,                    //Matrix obj of the image
                     new Point(1350, 1350),
                     300,
-                    new Scalar(0,0,0),
+                    new Scalar(0,0,0, 255),
                     -1
             );
         } else {
@@ -248,7 +248,7 @@ public class FirstFragment extends Fragment {
                     mat,                    //Matrix obj of the image
                     new Point(1350, 1350),
                     300,
-                    new Scalar(255,255,255),
+                    new Scalar(255,255,255, 255),
                     -1
             );
         }
@@ -257,7 +257,7 @@ public class FirstFragment extends Fragment {
                 mat,                    //Matrix obj of the image
                 new Point(1350, 1350),
                 300,
-                new Scalar(0,0,0),
+                new Scalar(0,0,0, 255),
                 10
         );
         //5
@@ -266,7 +266,7 @@ public class FirstFragment extends Fragment {
                     mat,                    //Matrix obj of the image
                     new Point(2150, 1350),
                     300,
-                    new Scalar(0,0,0),
+                    new Scalar(0,0,0, 255),
                     -1
             );
         } else {
@@ -274,7 +274,7 @@ public class FirstFragment extends Fragment {
                     mat,                    //Matrix obj of the image
                     new Point(2150, 1350),
                     300,
-                    new Scalar(255,255,255),
+                    new Scalar(255,255,255, 255),
                     -1
             );
         }
@@ -282,7 +282,7 @@ public class FirstFragment extends Fragment {
                 mat,                    //Matrix obj of the image
                 new Point(2150, 1350),
                 300,
-                new Scalar(0,0,0),
+                new Scalar(0,0,0, 255),
                 10
         );
         //6
@@ -291,7 +291,7 @@ public class FirstFragment extends Fragment {
                     mat,                    //Matrix obj of the image
                     new Point(550, 2150),
                     300,
-                    new Scalar(0,0,0),
+                    new Scalar(0,0,0, 255),
                     -1
             );
         } else {
@@ -299,7 +299,7 @@ public class FirstFragment extends Fragment {
                     mat,                    //Matrix obj of the image
                     new Point(550, 2150),
                     300,
-                    new Scalar(255,255,255),
+                    new Scalar(255,255,255, 255),
                     -1
             );
         }
@@ -308,7 +308,7 @@ public class FirstFragment extends Fragment {
                 mat,                    //Matrix obj of the image
                 new Point(550, 2150),
                 300,
-                new Scalar(0,0,0),
+                new Scalar(0,0,0, 255),
                 10
         );
         //7
@@ -317,7 +317,7 @@ public class FirstFragment extends Fragment {
                     mat,                    //Matrix obj of the image
                     new Point(1350, 2150),
                     300,
-                    new Scalar(0,0,0),
+                    new Scalar(0,0,0, 255),
                     -1
             );
         } else {
@@ -325,7 +325,7 @@ public class FirstFragment extends Fragment {
                     mat,                    //Matrix obj of the image
                     new Point(1350, 2150),
                     300,
-                    new Scalar(255,255,255),
+                    new Scalar(255,255,255, 255),
                     -1
             );
         }
@@ -334,7 +334,7 @@ public class FirstFragment extends Fragment {
                 mat,                    //Matrix obj of the image
                 new Point(1350, 2150),
                 300,
-                new Scalar(0,0,0),
+                new Scalar(0,0,0, 255),
                 10
         );
         //8
@@ -343,7 +343,7 @@ public class FirstFragment extends Fragment {
                     mat,                    //Matrix obj of the image
                     new Point(2150, 2150),
                     300,
-                    new Scalar(0,0,0),
+                    new Scalar(0,0,0, 255),
                     -1
             );
         } else {
@@ -351,7 +351,7 @@ public class FirstFragment extends Fragment {
                     mat,                    //Matrix obj of the image
                     new Point(2150, 2150),
                     300,
-                    new Scalar(255,255,255),
+                    new Scalar(255,255,255, 255),
                     -1
             );
         }
@@ -360,7 +360,7 @@ public class FirstFragment extends Fragment {
                 mat,                    //Matrix obj of the image
                 new Point(2150, 2150),
                 300,
-                new Scalar(0,0,0),
+                new Scalar(0,0,0, 255),
                 10
         );
         return mat;
