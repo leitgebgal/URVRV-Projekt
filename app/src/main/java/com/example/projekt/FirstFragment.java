@@ -54,7 +54,7 @@ public class FirstFragment extends Fragment {
                             Mat original = new Mat(bitmap.getHeight(), bitmap.getWidth(), CvType.CV_8UC1);
                             Utils.bitmapToMat(bitmap, original);
 
-                            original = createScoreMarker(original);
+                            original = createScoreMarker(original, 222);
 
                             Bitmap or = Bitmap.createBitmap(original.cols(), original.rows(), Bitmap.Config.ARGB_8888);
                             Utils.matToBitmap(original, or);
@@ -106,22 +106,263 @@ public class FirstFragment extends Fragment {
         binding = null;
     }
 
-    public Mat createScoreMarker(Mat mat){
+    public Mat createScoreMarker(Mat mat, int score){
+        // MIN SCORE = 0, MAX SCORE = 255
+        // BLACK = 1, WHITE = 0
+
+        if(score > 255) {
+            score = 255;
+        }
+        else if(score < 0){
+            score = 0;
+        }
+
+        //CONVERT SCORE TO BINARY STRING
+        String conversion = Integer.toBinaryString(score);
+        String result = String.format("%8s", conversion).replaceAll(" ", "0");
+
+        // RECTANGLES
+        // fill rectangle
         Imgproc.rectangle(
                 mat,                    //Matrix obj of the image
-                new Point(130, 50),        //p1
-                new Point(800, 680),       //p2
-                new Scalar(102,207,219),     //Scalar object for color
+                new Point(100, 100),        //p1
+                new Point(2600, 2600),       //p2
+                new Scalar(102,207,219),    //Scalar object for color
                 -1
         );
+
+        // border rectangle
         Imgproc.rectangle(
                 mat,                    //Matrix obj of the image
-                new Point(132, 52),        //p1
-                new Point(798, 678),       //p2
+                new Point(100, 100),        //p1
+                new Point(2600, 2600),       //p2
                 new Scalar(0, 0, 0),     //Scalar object for color
                 10
         );
 
+        // CIRCLES
+        // red circle
+        Imgproc.circle(
+                mat,                    //Matrix obj of the image
+                new Point(550, 550),
+                300,
+                new Scalar(255,0,0),
+                -1
+        );
+        Imgproc.circle(
+                mat,                    //Matrix obj of the image
+                new Point(550, 550),
+                300,
+                new Scalar(0,0,0),
+                10
+        );
+
+        // other circles
+        //1
+        if(result.charAt(7) == '1'){
+            Imgproc.circle(
+                    mat,                    //Matrix obj of the image
+                    new Point(1350, 550),
+                    300,
+                    new Scalar(0,0,0),
+                    -1
+            );
+        } else {
+            Imgproc.circle(
+                    mat,                    //Matrix obj of the image
+                    new Point(1350, 550),
+                    300,
+                    new Scalar(255,255,255),
+                    -1
+            );
+        }
+        Imgproc.circle(
+                mat,                    //Matrix obj of the image
+                new Point(1350, 550),
+                300,
+                new Scalar(0,0,0),
+                10
+        );
+        //2
+        if(result.charAt(6) == '1'){
+            Imgproc.circle(
+                    mat,                    //Matrix obj of the image
+                    new Point(2150, 550),
+                    300,
+                    new Scalar(0,0,0),
+                    -1
+            );
+        } else {
+            Imgproc.circle(
+                    mat,                    //Matrix obj of the image
+                    new Point(2150, 550),
+                    300,
+                    new Scalar(255,255,255),
+                    -1
+            );
+        }
+
+        Imgproc.circle(
+                mat,                    //Matrix obj of the image
+                new Point(2150, 550),
+                300,
+                new Scalar(0,0,0),
+                10
+        );
+        //3
+        if(result.charAt(5) == '1'){
+            Imgproc.circle(
+                    mat,                    //Matrix obj of the image
+                    new Point(550, 1350),
+                    300,
+                    new Scalar(0,0,0),
+                    -1
+            );
+        } else {
+            Imgproc.circle(
+                    mat,                    //Matrix obj of the image
+                    new Point(550, 1350),
+                    300,
+                    new Scalar(255,255,255),
+                    -1
+            );
+        }
+        Imgproc.circle(
+                mat,                    //Matrix obj of the image
+                new Point(550, 1350),
+                300,
+                new Scalar(0,0,0),
+                10
+        );
+        //4
+        if(result.charAt(4) == '1'){
+            Imgproc.circle(
+                    mat,                    //Matrix obj of the image
+                    new Point(1350, 1350),
+                    300,
+                    new Scalar(0,0,0),
+                    -1
+            );
+        } else {
+            Imgproc.circle(
+                    mat,                    //Matrix obj of the image
+                    new Point(1350, 1350),
+                    300,
+                    new Scalar(255,255,255),
+                    -1
+            );
+        }
+
+        Imgproc.circle(
+                mat,                    //Matrix obj of the image
+                new Point(1350, 1350),
+                300,
+                new Scalar(0,0,0),
+                10
+        );
+        //5
+        if(result.charAt(3) == '1'){
+            Imgproc.circle(
+                    mat,                    //Matrix obj of the image
+                    new Point(2150, 1350),
+                    300,
+                    new Scalar(0,0,0),
+                    -1
+            );
+        } else {
+            Imgproc.circle(
+                    mat,                    //Matrix obj of the image
+                    new Point(2150, 1350),
+                    300,
+                    new Scalar(255,255,255),
+                    -1
+            );
+        }
+        Imgproc.circle(
+                mat,                    //Matrix obj of the image
+                new Point(2150, 1350),
+                300,
+                new Scalar(0,0,0),
+                10
+        );
+        //6
+        if(result.charAt(2) == '1'){
+            Imgproc.circle(
+                    mat,                    //Matrix obj of the image
+                    new Point(550, 2150),
+                    300,
+                    new Scalar(0,0,0),
+                    -1
+            );
+        } else {
+            Imgproc.circle(
+                    mat,                    //Matrix obj of the image
+                    new Point(550, 2150),
+                    300,
+                    new Scalar(255,255,255),
+                    -1
+            );
+        }
+
+        Imgproc.circle(
+                mat,                    //Matrix obj of the image
+                new Point(550, 2150),
+                300,
+                new Scalar(0,0,0),
+                10
+        );
+        //7
+        if(result.charAt(1) == '1'){
+            Imgproc.circle(
+                    mat,                    //Matrix obj of the image
+                    new Point(1350, 2150),
+                    300,
+                    new Scalar(0,0,0),
+                    -1
+            );
+        } else {
+            Imgproc.circle(
+                    mat,                    //Matrix obj of the image
+                    new Point(1350, 2150),
+                    300,
+                    new Scalar(255,255,255),
+                    -1
+            );
+        }
+
+        Imgproc.circle(
+                mat,                    //Matrix obj of the image
+                new Point(1350, 2150),
+                300,
+                new Scalar(0,0,0),
+                10
+        );
+        //8
+        if(result.charAt(0) == '1'){
+            Imgproc.circle(
+                    mat,                    //Matrix obj of the image
+                    new Point(2150, 2150),
+                    300,
+                    new Scalar(0,0,0),
+                    -1
+            );
+        } else {
+            Imgproc.circle(
+                    mat,                    //Matrix obj of the image
+                    new Point(2150, 2150),
+                    300,
+                    new Scalar(255,255,255),
+                    -1
+            );
+        }
+
+        Imgproc.circle(
+                mat,                    //Matrix obj of the image
+                new Point(2150, 2150),
+                300,
+                new Scalar(0,0,0),
+                10
+        );
         return mat;
     }
 
